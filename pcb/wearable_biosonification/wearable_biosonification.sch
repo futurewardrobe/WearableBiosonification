@@ -181,8 +181,6 @@ F 3 "~" H 3050 3000 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	1850 3650 1950 3650
-Wire Wire Line
 	2050 3650 2050 3500
 $Comp
 L power:GND #PWR02
@@ -232,8 +230,6 @@ Wire Wire Line
 	2950 3750 3050 3750
 Wire Wire Line
 	2050 5000 2350 5000
-Wire Wire Line
-	2050 3750 2050 3950
 Wire Wire Line
 	3400 3750 3500 3750
 Wire Wire Line
@@ -359,50 +355,6 @@ Wire Wire Line
 Wire Wire Line
 	2950 5100 3650 5100
 Connection ~ 3650 5100
-$Comp
-L Connector:TestPoint TP3
-U 1 1 5FF4621A
-P 5150 3750
-F 0 "TP3" H 5208 3868 50  0000 L CNN
-F 1 "Out" H 5208 3777 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm" H 5350 3750 50  0001 C CNN
-F 3 "~" H 5350 3750 50  0001 C CNN
-	1    5150 3750
-	1    0    0    -1  
-$EndComp
-Connection ~ 5150 3750
-$Comp
-L Connector:TestPoint TP1
-U 1 1 5FF800DD
-P 1650 3500
-F 0 "TP1" V 1850 3500 50  0000 L CNN
-F 1 "Out" V 1750 3500 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm" H 1850 3500 50  0001 C CNN
-F 3 "~" H 1850 3500 50  0001 C CNN
-	1    1650 3500
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Connector:TestPoint TP2
-U 1 1 5FF8122F
-P 1650 3950
-F 0 "TP2" V 1700 4200 50  0000 L CNN
-F 1 "Out" V 1600 4200 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm" H 1850 3950 50  0001 C CNN
-F 3 "~" H 1850 3950 50  0001 C CNN
-	1    1650 3950
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	1650 3950 2050 3950
-Connection ~ 2050 3950
-Wire Wire Line
-	1650 3500 1950 3500
-Wire Wire Line
-	1950 3500 1950 3650
-Connection ~ 1950 3650
-Wire Wire Line
-	1950 3650 2050 3650
 NoConn ~ 3200 3000
 NoConn ~ 2050 2800
 Text GLabel 6700 3000 1    50   Output ~ 0
@@ -414,36 +366,48 @@ Vfeather
 Wire Wire Line
 	2550 3400 2550 3450
 Wire Wire Line
-	2050 3950 2050 4350
+	1850 3650 2050 3650
 $Comp
-L Connector_Generic:Conn_01x02 J2
-U 1 1 5FCEBE87
-P 1650 4350
-F 0 "J2" H 1750 4400 50  0000 C CNN
-F 1 "1.5V" H 1800 4300 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 1650 4350 50  0001 C CNN
-F 3 "~" H 1650 4350 50  0001 C CNN
-	1    1650 4350
-	-1   0    0    -1  
+L Device:R R8
+U 1 1 5FD1634A
+P 4700 2550
+F 0 "R8" H 4770 2596 50  0000 L CNN
+F 1 "1k" H 4770 2505 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 4630 2550 50  0001 C CNN
+F 3 "~" H 4700 2550 50  0001 C CNN
+	1    4700 2550
+	0    1    1    0   
 $EndComp
 $Comp
-L power:GND #PWR0101
-U 1 1 5FCF9E94
-P 1900 4500
-F 0 "#PWR0101" H 1900 4250 50  0001 C CNN
-F 1 "GND" H 1905 4327 50  0000 C CNN
-F 2 "" H 1900 4500 50  0001 C CNN
-F 3 "" H 1900 4500 50  0001 C CNN
-	1    1900 4500
+L Device:LED_ALT D1
+U 1 1 5FD1F003
+P 4250 2550
+F 0 "D1" H 4243 2295 50  0000 C CNN
+F 1 "LED" H 4243 2386 50  0000 C CNN
+F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4250 2550 50  0001 C CNN
+F 3 "~" H 4250 2550 50  0001 C CNN
+	1    4250 2550
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4400 2550 4550 2550
+Text GLabel 4100 2550 0    50   Input ~ 0
+Vfeather
+$Comp
+L power:GND #PWR01
+U 1 1 5FD35904
+P 5000 2650
+F 0 "#PWR01" H 5000 2400 50  0001 C CNN
+F 1 "GND" H 5005 2477 50  0000 C CNN
+F 2 "" H 5000 2650 50  0001 C CNN
+F 3 "" H 5000 2650 50  0001 C CNN
+	1    5000 2650
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1850 4350 2050 4350
-Connection ~ 2050 4350
+	4850 2550 5000 2550
 Wire Wire Line
-	2050 4350 2050 5000
+	5000 2550 5000 2650
 Wire Wire Line
-	1850 4450 1900 4450
-Wire Wire Line
-	1900 4450 1900 4500
+	2050 3750 2050 5000
 $EndSCHEMATC
