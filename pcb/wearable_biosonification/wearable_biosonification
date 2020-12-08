@@ -1,0 +1,25 @@
+Source,/home/lifthoofd/projects/catherine_euale/kicad/wearable_biosonification/wearable_biosonification.sch
+Kicad Rev,Eeschema 5.1.7-a382d34a8~88~ubuntu18.04.1
+Generated Date,ma 07 dec 2020 12:03:22 CET
+
+Title,Not Set
+Company,Not Set
+Revision,Not Set
+Date Issue,Not Set
+
+Reference,Value,Library,Library Ref
+R7,100k,Device,R
+A1,Adafruit_Feather_HUZZAH32_ESP32,MCU_Module,Adafruit_Feather_HUZZAH32_ESP32
+U1,LM324,Amplifier_Operational,LM324
+J1,Electrodes,Connector,Screw_Terminal_01x02
+R1,1M,Device,R
+R2,100k,Device,R
+R3,100k,Device,R
+R5,10k,Device,R
+R6,10k,Device,R
+RV1,1M,Device,R_POT_US
+RV2,100k,Device,R_POT_US
+R4,10k,Device,R
+TP3,Out,Connector,TestPoint
+TP1,Out,Connector,TestPoint
+TP2,Out,Connector,TestPoint
