@@ -1,0 +1,11 @@
+[Unit]
+Description=wearable biosonification processing sketch
+After=graphical.target
+
+[Service]
+User=pi
+ExecStart=
+Restart=always
+
+[Install]
+WantedBy=graphical.target

@@ -66,6 +66,17 @@ sudo mv /etc/dhcpcd.conf /etc/dhcpcd.conf.bak
 cat /home/$user/wbs/rpi/dhcpcd.conf | sed "s/static ip_address=/&$curr_ip/" | sed "s/static routers=/&$curr_router/" \
     > /tmp/dhcpcd.conf
 sudo mv /tmp/dhcpcd.conf /etc/dhcpcd.conf
+echo ""
+echo "ENTER THIS IP ADDRESS IN THE ARDUINO SKETCH: $curr_ip"
+
+echo ""
+echo "creating unit files..."
+cmd="processing-java --sketch=\/home\/$user\/wbs\/processing\/biodata_sensor --run"
+cat /home/$user/wbs/rpi/wbs_processing.service |\
+    sed "s/ExecStart=/&$cmd/"
+    
+
+
 
 
 
