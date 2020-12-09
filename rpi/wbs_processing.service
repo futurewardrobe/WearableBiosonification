@@ -1,6 +1,10 @@
 [Unit]
 Description=wearable biosonification processing sketch
-After=graphical.target
+After=network-online.target
+Wants=network-online.target systemd-networkd-wait-online.service
+
+StartLimitIntervalSec=500
+StartLimitBurst=5
 
 [Service]
 User=
@@ -8,6 +12,7 @@ Environment=""
 Environment="DISPLAY=:0"
 ExecStart=
 Restart=always
+RestartSec=30s
 
 [Install]
 WantedBy=graphical.target

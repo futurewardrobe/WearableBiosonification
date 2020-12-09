@@ -64,8 +64,8 @@ echo $curr_ip
 echo $curr_router
 sudo mv /etc/dhcpcd.conf /etc/dhcpcd.conf.bak
 cat /home/$user/wbs/rpi/dhcpcd.conf | sed "s/static ip_address=/&$curr_ip/" | sed "s/static routers=/&$curr_router/" \
-    > /tmp/dhcpcd.conf
-sudo mv /tmp/dhcpcd.conf /etc/dhcpcd.conf
+    > $temp_dir/dhcpcd.conf
+sudo mv $temp_dir/dhcpcd.conf /etc/dhcpcd.conf
 echo ""
 echo "ENTER THIS IP ADDRESS IN THE ARDUINO SKETCH: $curr_ip"
 
@@ -77,11 +77,10 @@ env='Environment="'
 cat /home/$user/wbs/rpi/wbs_processing.service |\
     sed "s/ExecStart=/&$cmd/" |\
     sed "s/User=/&$user/" |\
-    sed "0, /$env/s//&$xauth/" > /tmp/wbs_processing.service
-#sudo mv /tmp/wbs_processing.service /etc/systemd/system/wbs_processing.service
-#sudo chmod 644 /lib/systemd/system/wbs_processing.service
-#sudo systemctl daemon-reload
-#sudo systemctl start wbs_processing.service
+    sed "0, /$env/s//&$xauth/" > $temp_dir/wbs_processing.service
+sudo mv $temp_dir/wbs_processing.service /etc/systemd/system/wbs_processing.service
+sudo systemctl daemon-reload
+sudo systemctl enable wbs_processing.service
     
 
 
