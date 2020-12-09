@@ -1,6 +1,6 @@
 [Unit]
 Description=wearable biosonification processing sketch
-After=graphical.target
+After=network.target
 
 [Service]
 User=pi
