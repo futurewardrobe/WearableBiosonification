@@ -75,9 +75,9 @@ cmd="\/usr\/local\/bin\/processing-java --sketch=\/home\/$user\/wbs\/processing\
 cat /home/$user/wbs/rpi/wbs_processing.service |\
     sed "s/ExecStart=/&$cmd/" > /tmp/wbs_processing.service
 sudo mv /tmp/wbs_processing.service /etc/systemd/system/wbs_processing.service
-sudo chmod 644 /lib/systemd/system/wbs_processing.service
-sudo systemctl daemon-reload
-sudo systemctl start wbs_processing.service
+#sudo chmod 644 /lib/systemd/system/wbs_processing.service
+#sudo systemctl daemon-reload
+#sudo systemctl start wbs_processing.service
     
 
 

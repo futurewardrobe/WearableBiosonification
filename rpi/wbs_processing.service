@@ -1,6 +1,6 @@
 [Unit]
 Description=wearable biosonification processing sketch
-After=network.target
+After=graphical.target
 
 [Service]
 User=pi
@@ -8,4 +8,4 @@ ExecStart=
 Restart=always
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=graphical.target
