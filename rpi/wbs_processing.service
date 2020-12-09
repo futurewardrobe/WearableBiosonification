@@ -8,4 +8,4 @@ ExecStart=
 Restart=always
 
 [Install]
-WantedBy=graphical.target
+WantedBy=multi-user.target
