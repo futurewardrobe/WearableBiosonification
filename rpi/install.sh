@@ -71,7 +71,7 @@ echo "ENTER THIS IP ADDRESS IN THE ARDUINO SKETCH: $curr_ip"
 
 echo ""
 echo "creating unit files..."
-cmd="\/usr\/local\/bin\/processing-java --sketch=\/home\/$user\/wbs\/processing\/biodata_sensor --run9"
+cmd="\/usr\/local\/bin\/processing-java --sketch=\/home\/$user\/wbs\/processing\/biodata_sensor --run"
 xauth="XAUTHORITY=\/home\/$user\/.Xauthority"
 env='Environment="'
 cat /home/$user/wbs/rpi/wbs_processing.service |\
