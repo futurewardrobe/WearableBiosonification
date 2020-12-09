@@ -51,6 +51,19 @@ read -p "WiFi SSID: " ssid
 read -p "WiFi password: " password
 
 echo "creating config files..."
-find_str='/ssid="/a '
-#echo $find_str"$ssid"
-sed '/ssid="/a LIFTNET' /home/$user/wbs/rpi/wpa_supplicant.conf
+find_ssid='s/ssid="'
+find_pwd='s/psk="'
+wpa_path=/etc/wpa_supplicant
+sudo mv $wpa_path/wpa_supplicant.conf $wpa_path/wpa_supplicant.conf.bak
+cat /home/$user/wbs/rpi/wpa_supplicant.conf | sed "$find_ssid/&$ssid/" | sed "$find_pwd/&$password/" > $temp_dir/wpa_supplicant.conf
+sudo mv $temp_dir/wpa_supplicant.conf $wpa_path/
+
+curr_ip=ifconfig wlan0 | awk '/inet /{print substr($2,0)}'
+curr_router=ifconfig wlan0 | awk '/inet /{print substr($2,0)}'
+#sudo mv /etc/dhcpcd.conf /etc/dhcpcd.conf.bak
+cat /home/$user/wbs/rpi/dhcpcd.conf | sed "s/static ip_address=/&$curr_ip/" | sed "s/static routers=/&$curr_router/"
+
+
+
+
+
