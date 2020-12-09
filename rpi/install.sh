@@ -71,10 +71,14 @@ echo "ENTER THIS IP ADDRESS IN THE ARDUINO SKETCH: $curr_ip"
 
 echo ""
 echo "creating unit files..."
-cmd="\/usr\/local\/bin\/processing-java --sketch=\/home\/$user\/wbs\/processing\/biodata_sensor --run"
+cmd="\/usr\/local\/bin\/processing-java --sketch=\/home\/$user\/wbs\/processing\/biodata_sensor --run9"
+xauth="XAUTHORITY=\/home\/$user\/.Xauthority"
+env='Environment="'
 cat /home/$user/wbs/rpi/wbs_processing.service |\
-    sed "s/ExecStart=/&$cmd/" > /tmp/wbs_processing.service
-sudo mv /tmp/wbs_processing.service /etc/systemd/system/wbs_processing.service
+    sed "s/ExecStart=/&$cmd/" |\
+    sed "s/User=/&$user/" |\
+    sed "0, /$env/s//&$xauth/" > /tmp/wbs_processing.service
+#sudo mv /tmp/wbs_processing.service /etc/systemd/system/wbs_processing.service
 #sudo chmod 644 /lib/systemd/system/wbs_processing.service
 #sudo systemctl daemon-reload
 #sudo systemctl start wbs_processing.service

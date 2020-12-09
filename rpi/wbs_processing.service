@@ -3,7 +3,9 @@ Description=wearable biosonification processing sketch
 After=graphical.target
 
 [Service]
-User=pi
+User=
+Environment=""
+Environment="DISPLAY=:0"
 ExecStart=
 Restart=always
 
