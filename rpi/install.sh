@@ -12,7 +12,7 @@ sudo apt update && sudo apt -y upgrade
 
 echo ""
 echo "installing git and puredata"
-sudo apt install -y git puredata deken
+sudo apt install -y git puredata pd-iemnet pd-osc
 
 echo ""
 if ! command -v processing &> /dev/null; then
@@ -79,8 +79,19 @@ cat /home/$user/wbs/rpi/wbs_processing.service |\
     sed "s/User=/&$user/" |\
     sed "0, /$env/s//&$xauth/" > $temp_dir/wbs_processing.service
 sudo mv $temp_dir/wbs_processing.service /etc/systemd/system/wbs_processing.service
+
+cmd="\/usr\/bin\/puredata -nomidi -noadc -alsa -audiooutdev 5 PD\/osc_test.pd"
+xauth="XAUTHORITY=\/home\/$user\/.Xauthority"
+env='Environment="'
+cat /home/$user/wbs/rpi/wbs_puredata.service |\
+    sed "s/ExecStart=/&$cmd/" |\
+    sed "s/User=/&$user/" |\
+    sed "0, /$env/s//&$xauth/" > $temp_dir/wbs_puredata.service
+sudo mv $temp_dir/wbs_puredata.service /etc/systemd/system/wbs_puredata.service
+
 sudo systemctl daemon-reload
 sudo systemctl enable wbs_processing.service
+sudo systemctl enable wbs_puredata.service
     
 
 
