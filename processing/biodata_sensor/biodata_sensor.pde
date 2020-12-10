@@ -6,7 +6,7 @@ final static int LOCATION_X = 40;
 final static int LOCATION_Y = 20;
 final static int DIMENSION_X = 560;
 final static int DIMENSION_Y = 660;
-final static boolean IS_FULLSCREEN = true;
+final static boolean IS_FULLSCREEN = false;
 final static int WINDOW_WIDTH = 600;
 final static int WINDOW_HEIGHT =700;
 
