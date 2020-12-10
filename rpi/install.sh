@@ -12,7 +12,7 @@ sudo apt update && sudo apt -y upgrade
 
 echo ""
 echo "installing git and puredata"
-sudo apt install -y git puredata
+sudo apt install -y git puredata deken
 
 echo ""
 if ! command -v processing &> /dev/null; then
