@@ -1,8 +1,0 @@
-#N canvas 738 220 450 300 10;
-#X obj 58 64 iemnet/udpreceive 8666;
-#X obj 58 95 osc/unpackOSC;
-#X obj 58 120 osc/routeOSC /pulsum-osc;
-#X obj 58 143 print osc_in;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 2 0 3 0;
