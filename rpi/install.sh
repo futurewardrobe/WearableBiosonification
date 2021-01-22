@@ -80,7 +80,7 @@ cat /home/$user/wbs/rpi/wbs_processing.service |\
     sed "0, /$env/s//&$xauth/" > $temp_dir/wbs_processing.service
 sudo mv $temp_dir/wbs_processing.service /etc/systemd/system/wbs_processing.service
 
-cmd="\/usr\/bin\/puredata -nogui -nomidi -noadc -alsa -audiooutdev 5 \/home\/$user\/wbs\/PD\/osc_test.pd"
+cmd="\/usr\/bin\/puredata -nogui -nomidi -noadc -alsa -audiooutdev 5 \/home\/$user\/wbs\/PD\/_main.pd"
 xauth="XAUTHORITY=\/home\/$user\/.Xauthority"
 env='Environment="'
 cat /home/$user/wbs/rpi/wbs_puredata.service |\
