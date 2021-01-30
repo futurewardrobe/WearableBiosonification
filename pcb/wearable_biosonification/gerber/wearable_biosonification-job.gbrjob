@@ -7,7 +7,7 @@
       "Application": "Pcbnew",
       "Version":     "5.1.7-a382d34a8~88~ubuntu18.04.1"
     },
-    "CreationDate":  "2020-12-29T15:59:59+01:00"
+    "CreationDate":  "2021-01-04T13:18:22+01:00"
   },
   "GeneralSpecs":
   {
@@ -38,47 +38,47 @@
   "FilesAttributes":
   [
     {
-      "Path":  "wearable_biosonification-F_Cu.gbr",
+      "Path":  "wearable_biosonification-F_Cu.gtl",
       "FileFunction":  "Copper,L1,Top",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "wearable_biosonification-B_Cu.gbr",
+      "Path":  "wearable_biosonification-B_Cu.gbl",
       "FileFunction":  "Copper,L2,Bot",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "wearable_biosonification-F_Paste.gbr",
+      "Path":  "wearable_biosonification-F_Paste.gtp",
       "FileFunction":  "SolderPaste,Top",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "wearable_biosonification-B_Paste.gbr",
+      "Path":  "wearable_biosonification-B_Paste.gbp",
       "FileFunction":  "SolderPaste,Bot",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "wearable_biosonification-F_SilkS.gbr",
+      "Path":  "wearable_biosonification-F_SilkS.gto",
       "FileFunction":  "Legend,Top",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "wearable_biosonification-B_SilkS.gbr",
+      "Path":  "wearable_biosonification-B_SilkS.gbo",
       "FileFunction":  "Legend,Bot",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "wearable_biosonification-F_Mask.gbr",
+      "Path":  "wearable_biosonification-F_Mask.gts",
       "FileFunction":  "SolderMask,Top",
       "FilePolarity":  "Negative"
     },
     {
-      "Path":  "wearable_biosonification-B_Mask.gbr",
+      "Path":  "wearable_biosonification-B_Mask.gbs",
       "FileFunction":  "SolderMask,Bot",
       "FilePolarity":  "Negative"
     },
     {
-      "Path":  "wearable_biosonification-Edge_Cuts.gbr",
+      "Path":  "wearable_biosonification-Edge_Cuts.gm1",
       "FileFunction":  "Profile",
       "FilePolarity":  "Positive"
     }
