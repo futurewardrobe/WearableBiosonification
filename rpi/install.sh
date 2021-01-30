@@ -27,6 +27,15 @@ mkdir -p $temp_dir
 libraries=/home/$user/sketchbook/libraries
 mkdir -p $libraries
 
+if [ ! -d $libraries/controlP5 ]; then
+    echo "installing controlP5 library..."
+    wget https://github.com/sojamo/controlp5/releases/download/v2.2.5/controlP5-2.2.5.zip -P $temp_dir
+    unzip $temp_dir/controlP5-2.2.5.zip -d $temp_dir
+    mv $temp_dir/controlP5 $libraries
+else
+    echo "controlP5 is already installed!"
+fi
+
 if [ ! -d $libraries/oscP5 ]; then
     echo "installing oscP5 library..."
     wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/oscp5/oscP5-0.9.9.zip -P $temp_dir
