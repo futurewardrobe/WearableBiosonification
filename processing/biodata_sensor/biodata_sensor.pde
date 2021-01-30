@@ -1,14 +1,15 @@
 import oscP5.*;
 import netP5.*;
 
+
 // adjust these constants to adjust the screen
-final static int LOCATION_X = 40;
-final static int LOCATION_Y = 20;
+final static int LOCATION_X = 10;
+final static int LOCATION_Y = 10;
 final static int DIMENSION_X = 560;
-final static int DIMENSION_Y = 660;
+final static int DIMENSION_Y = 460;
 final static boolean IS_FULLSCREEN = true;
-final static int WINDOW_WIDTH = 600;
-final static int WINDOW_HEIGHT =700;
+final static int WINDOW_WIDTH = 800;
+final static int WINDOW_HEIGHT =480;
 
 final static int NUM_SENSORS = 1;
 final static int OSC_IN_PORT = 8444;
@@ -29,12 +30,12 @@ void settings(){
 
 void setup() {
   for (int i=0; i<ss.length; ++i) {
-    ss[i] = new Sensor(new PVector(LOCATION_X, LOCATION_Y+i*110), new PVector(DIMENSION_X, DIMENSION_Y), "sensor"+i);
+    ss[i] = new Sensor(this, new PVector(LOCATION_X, LOCATION_Y+i*110), new PVector(DIMENSION_X, DIMENSION_Y), "sensor"+i);
   }
   lastOscMillis = millis();
   oscP5 = new OscP5(this, OSC_IN_PORT);
 
-  noCursor();
+  //noCursor();
 }
 
 void draw() {

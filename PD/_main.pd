@@ -1,4 +1,4 @@
-#N canvas 0 87 1920 944 10;
+#N canvas 1920 60 1280 964 10;
 #N canvas 176 179 1326 420 loadsound 0;
 #X obj 88 278 soundfiler;
 #X floatatom 88 300 15 0 0 0 - - -, f 15;
@@ -200,25 +200,25 @@
 #X msg 723 283 read -resize sounds/hanning.wav hann;
 #X msg 733 320 read -resize sounds/hanning.wav crown;
 #X obj 757 474 hsl 195 8 0 1 0 0 empty 0-loc empty -2 -8 0 10 -262144
--1 -1 13007 1;
+-1 -1 7197 1;
 #X obj 757 482 hsl 195 8 0 1 0 0 empty 1-loc empty -2 -8 0 10 -262144
--1 -1 13014 1;
+-1 -1 11693 1;
 #X obj 757 490 hsl 195 8 0 1 0 0 empty 2-loc empty -2 -8 0 10 -262144
--1 -1 12940 1;
+-1 -1 6455 1;
 #X obj 757 498 hsl 195 8 0 1 0 0 empty 3-loc empty -2 -8 0 10 -262144
--1 -1 10170 1;
+-1 -1 5670 1;
 #X obj 757 506 hsl 195 8 0 1 0 0 empty 4-loc empty -2 -8 0 10 -262144
--1 -1 11347 1;
+-1 -1 12595 1;
 #X obj 757 514 hsl 195 8 0 1 0 0 empty 5-loc empty -2 -8 0 10 -262144
--1 -1 7072 1;
+-1 -1 3764 1;
 #X obj 757 522 hsl 195 8 0 1 0 0 empty 6-loc empty -2 -8 0 10 -262144
--1 -1 8080 1;
+-1 -1 13148 1;
 #X obj 757 530 hsl 195 8 0 1 0 0 empty 7-loc empty -2 -8 0 10 -262144
--1 -1 8174 1;
+-1 -1 3502 1;
 #X obj 757 538 hsl 195 8 0 1 0 0 empty 8-loc empty -2 -8 0 10 -262144
--1 -1 8631 1;
+-1 -1 5117 1;
 #X obj 757 546 hsl 195 8 0 1 0 0 empty 9-loc empty -2 -8 0 10 -262144
--1 -1 9707 1;
+-1 -1 12697 1;
 #X text 767 453 grain location visualizer;
 #X connect 6 0 7 0;
 #X connect 7 0 8 0;
@@ -249,23 +249,23 @@
 #X connect 44 0 28 0;
 #X restore 22 629 pd windows;
 #X obj 23 217 hsl 195 15 0 1 0 0 sample_offset sample_offset_rcv sample_offset
--2 -8 0 10 -262144 -1 -1 9700 1;
+-2 -8 0 10 -262144 -1 -1 5917 1;
 #X obj 23 281 hsl 128 15 0 1 0 0 offset_random offset_random_rcv offset_random
--2 -8 0 10 -262144 -1 -1 4454 1;
+-2 -8 0 10 -262144 -1 -1 9525 1;
 #X obj 24 417 hsl 128 15 0.001 1 0 0 grain_size grain_size_rcv grain_size
--2 -8 0 10 -262144 -1 -1 6344 1;
+-2 -8 0 10 -262144 -1 -1 10030 1;
 #X obj 24 380 hsl 128 15 0 1 0 0 random_pitch random_pitch_rcv random_pitch
--2 -8 0 10 -262144 -1 -1 5600 1;
+-2 -8 0 10 -262144 -1 -1 12700 1;
 #X obj 213 487 hsl 128 15 0 1 0 0 random_panning random_panning_rcv
 random_panning -2 -8 0 10 -262144 -1 -1 7620 1;
 #X obj 213 455 hsl 128 15 0 1 0 0 global_pan global_pan_rcv global_pan
 -2 -8 0 10 -262144 -1 -1 6350 1;
 #X obj 24 454 hsl 128 15 0.002 1 0 0 grain_density grain_density_rcv
-grain_density -2 -8 0 10 -262144 -1 -1 1247 1;
+grain_density -2 -8 0 10 -262144 -1 -1 5765 1;
 #X obj 24 491 hsl 128 15 0 1 0 0 grainplay_chance grainplay_chance_rcv
-grainplay_chance -2 -8 0 10 -262144 -1 -1 12700 1;
+grainplay_chance -2 -8 0 10 -262144 -1 -1 11112 1;
 #X obj 21 301 tgl 15 0 reverse reverse_rcv reverse 17 7 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 24 247 hsl 195 15 0 1 0 0 rec_location rec_location_rcv rec_location
 -2 -8 0 10 -262144 -258113 -1 0 1;
 #X obj 259 297 vsl 15 128 0.01 1.4 1 0 volume volume_rcv volume 0 -9
@@ -511,7 +511,7 @@ grainplay_chance -2 -8 0 10 -262144 -1 -1 12700 1;
 #X connect 69 1 30 0;
 #X restore 22 587 pd sampling_stereo;
 #X obj 22 330 hsl 128 15 0 1 0 0 grain_pitch grain_pitch_rcv grain_pitch
--2 -8 0 10 -262144 -1 -1 3175 1;
+-2 -8 0 10 -262144 -1 -1 1237 1;
 #X obj 22 565 ys.granular_stereo 1;
 #X obj 241 62 tgl 30 0 on_off on_off_rcv on_off 30 7 0 10 -262144 -1
 -1 1 1;
@@ -520,14 +520,14 @@ grainplay_chance -2 -8 0 10 -262144 -1 -1 12700 1;
 #X obj 241 104 tgl 15 0 input_monitor input_monitor_rcv input_monitor
 17 7 0 10 -262144 -1 -1 0 1;
 #X obj 83 302 tgl 15 0 reverse_random reverse_random_rcv reverse_random
-17 7 0 10 -262144 -1 -1 1 1;
+17 7 0 10 -262144 -1 -1 0 1;
 #X obj 241 164 vradio 15 1 0 3 stereoms stereoms_rcv empty 0 -8 0 10
 -262144 -1 -1 2;
 #X text 259 163 stereo;
 #X text 257 178 mid/side;
 #X text 258 192 mono;
 #X obj 21 23 hradio 15 1 0 14 select_sound select_sound_rcv select_sound
-0 -8 0 10 -262144 -1 -1 7;
+0 -8 0 10 -262144 -1 -1 2;
 #X obj 22 546 bng 15 250 50 0 midi-properties midi-properties_rcv midi-properties
 17 7 0 10 -262144 -1 -1;
 #X obj 22 528 bng 15 250 50 0 audio-properties audio-properties_rcv
@@ -593,23 +593,61 @@ bang to pick a wav/aiff file;
 #X text 20 712 by yann seznec // yannseznec.com;
 #X obj 279 412 tgl 15 0 reverb_on reverb_on_rcv reverb_on 17 7 0 10
 -262144 -1 -1 0 1;
-#X obj 653 23 iemnet/udpreceive 8666;
-#X obj 653 54 osc/unpackOSC;
-#X obj 653 79 osc/routeOSC /pulsum-osc;
-#X obj 653 105 / 4096;
-#X obj 653 131 s grain_pitch_rcv;
-#X obj 821 101 s select_sound_rcv;
-#X obj 854 131 s on_off_rcv;
-#X obj 821 25 loadbang;
-#X obj 821 49 t b b, f 6;
-#X msg 854 74 1;
-#X msg 821 75 8;
-#X connect 45 0 46 0;
-#X connect 46 0 47 0;
+#X obj 1100 102 s select_sound_rcv;
+#X obj 1133 132 s on_off_rcv;
+#X obj 1100 26 loadbang;
+#X obj 1100 50 t b b, f 6;
+#X msg 1133 75 1;
+#X msg 1100 76 8;
+#N canvas 1992 249 1144 540 osc_handler 0;
+#X obj 168 64 iemnet/udpreceive 8666;
+#X obj 168 95 osc/unpackOSC;
+#X obj 166 215 / 4096;
+#X obj 166 241 s grain_pitch_rcv;
+#X obj 165 127 osc/routeOSC /pulsum-osc/sensor0;
+#X obj 484 234 s sample_offset_rcv;
+#X obj 563 260 s offset_random_rcv;
+#X obj 643 286 s random_pitch_rcv;
+#X obj 722 313 s grain_size_rcv;
+#X obj 802 338 s grain_density_rcv;
+#X obj 888 367 s grainplay_chance_rcv;
+#X obj 166 179 osc/routeOSC /filtrado /crudo /min /max /sample_offset
+/random_offset /random_pitch /grain_size /grain_density /grainplay_chance
+/select_sound, f 147;
+#X obj 1022 306 s select_sound_rcv;
+#X obj 1060 98 t b b;
+#X msg 1094 126 0, f 2;
+#X msg 1060 125 1;
+#X obj 1060 74 loadbang;
+#X obj 1022 248 spigot 0;
+#X obj 1070 216 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+1 1;
+#X obj 1060 154 delay 1 30 sec;
+#X obj 1022 275 change;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 4 0 11 0;
+#X connect 11 0 2 0;
+#X connect 11 4 5 0;
+#X connect 11 5 6 0;
+#X connect 11 6 7 0;
+#X connect 11 7 8 0;
+#X connect 11 8 9 0;
+#X connect 11 9 10 0;
+#X connect 11 10 17 0;
+#X connect 13 0 15 0;
+#X connect 13 1 14 0;
+#X connect 14 0 18 0;
+#X connect 15 0 19 0;
+#X connect 16 0 13 0;
+#X connect 17 0 20 0;
+#X connect 18 0 17 1;
+#X connect 19 0 18 0;
+#X connect 20 0 12 0;
+#X restore 21 677 pd osc_handler;
 #X connect 47 0 48 0;
-#X connect 48 0 49 0;
-#X connect 52 0 53 0;
-#X connect 53 0 55 0;
-#X connect 53 1 54 0;
-#X connect 54 0 51 0;
-#X connect 55 0 50 0;
+#X connect 48 0 50 0;
+#X connect 48 1 49 0;
+#X connect 49 0 46 0;
+#X connect 50 0 45 0;
