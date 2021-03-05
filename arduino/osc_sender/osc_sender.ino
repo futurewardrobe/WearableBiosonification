@@ -1,4 +1,5 @@
-#include <WiFi.h>
+//#include <WiFi.h>
+#include <ESP8266WiFi.h>
 #include <WiFiUdp.h>
 #include <OSCMessage.h>
 
@@ -6,11 +7,11 @@
 #define OSC_ADDRESS "/osc/port/0"
 #define SENSOR_PIN A0
 
-char ssid[] = "**************";       // enter the network name/ssid here
-char pass[] = "********";             // enter the network password here
+char ssid[] = "LIFTNET";       // enter the network name/ssid here
+char pass[] = "b1d9315605";             // enter the network password here
 
 WiFiUDP udp;
-const IPAddress outIp(192,168,1,100); // enter the ip address of the receiviing computere here
+const IPAddress outIp(192,168,1,15); // enter the ip address of the receiviing computere here
 const unsigned int outPort = 8444;    // enter the port over which we want to send the OSC data
 const unsigned int localPort = 8222;     // enter the port over which we are receiving OSC data (wont be used except to establish a UDP connection)
 
@@ -23,6 +24,7 @@ void setup() {
   Serial.println();
   Serial.print("Connecting to ");
   Serial.println(ssid);
+  WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, pass);
 
   while(WiFi.status() != WL_CONNECTED) {

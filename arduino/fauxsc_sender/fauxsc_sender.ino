@@ -13,7 +13,7 @@ char ssid[] = "********";       // enter the network name/ssid here
 char pass[] = "********";             // enter the network password here
 
 WiFiUDP udp;
-const IPAddress outIp(192,168,1,15); // enter the ip address of the receiviing computere here
+const IPAddress outIp(192, 168, 1, 15); // enter the ip address of the receiviing computere here
 const unsigned int outPort = 8444;    // enter the port over which we want to send the OSC data
 const unsigned int localPort = 8222;     // enter the port over which we are receiving OSC data (wont be used except to establish a UDP connection)
 
@@ -93,7 +93,7 @@ void setup() {
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, pass);
 
-  while(WiFi.status() != WL_CONNECTED) {
+  while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
   }
@@ -106,31 +106,31 @@ void setup() {
   Serial.println("Starting UDP");
   udp.begin(localPort);
   Serial.println(localPort);
-  
+
   lastRead = 0;
   i = 0;
   loopIndex = 0;
 }
 
 void loop() {
-  if(millis() - lastRead > READ_PERIOD){
+  if (millis() - lastRead > READ_PERIOD) {
 
-  i += PNOISE_SPEED;
-  
-  if(loopIndex == 0){
-    fauxVal = int(pnoise(i + sin(i), i + cos(i), i) * 2048 + 2048);
-  } else {
-    fauxVal = 0;  
-  }
-  
-  Serial.println(fauxVal);
+    i += PNOISE_SPEED;
+
+    if (loopIndex == 0) {
+      fauxVal = int(pnoise(i + sin(i), i + cos(i), i) * 2048 + 2048);
+    } else {
+      fauxVal = 0;
+    }
+
+    Serial.println(fauxVal);
     OSCMessage msg(OSC_ADDRESS);
     msg.add(fauxVal);
     udp.beginPacket(outIp, outPort);
     msg.send(udp);
     udp.endPacket();
     msg.empty();
-    
+
     lastRead = millis();
     loopIndex += 1;
     loopIndex %= 2;
