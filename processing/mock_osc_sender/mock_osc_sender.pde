@@ -4,7 +4,12 @@ import netP5.*;
 OscP5 oscP5;
 NetAddress myRemoteLocation;
 
-int data = 0;
+float noiseSpeed = 0.01f;
+int readPeriod = 5;
+double lastRead = 0;
+int loopIndex = 0;
+int fauxVal = 0;
+float xoff = 0;
 
 void setup() {
   size(400,400);
@@ -13,14 +18,24 @@ void setup() {
   myRemoteLocation = new NetAddress("127.0.0.1", 8444);
 }
 
-
 void draw() {
   background(0);  
   
-  OscMessage msg = new OscMessage("/osc/port/0");
-  msg.add(data);
-  oscP5.send(msg, myRemoteLocation);
-  data = (data + 1) % 4096;
-  
-  delay(5);
+  if(millis() - lastRead > readPeriod){
+    xoff += noiseSpeed;
+    
+    if (loopIndex == 0){
+      fauxVal = ceil(noise(xoff) * 4095);
+    } else {
+      fauxVal = 0;
+    }
+    
+    OscMessage msg = new OscMessage("/osc/port/0");
+    msg.add(fauxVal);
+    oscP5.send(msg, myRemoteLocation);
+    
+    lastRead = millis();
+    loopIndex += 1;
+    loopIndex %= 2;
+  }
 }
